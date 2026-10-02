@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Resume Analysis - Resume AI
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>🤖 Resume AI</h2>
+
+    <a href="/dashboard">
+        Dashboard
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+    <h1>📊 Resume Analysis Result</h1>
+
+
+    <div class="card">
+
+        <h2>📄 Resume Information</h2>
+
+        <p>
+            <b>File:</b>
+            {{ filename }}
+        </p>
+
+        <p>
+            <b>Email:</b>
+            {{ email }}
+        </p>
+
+        <p>
+            <b>Phone:</b>
+            {{ phone }}
+        </p>
+
+    </div>
+
+
+    <div class="score-grid">
+
+
+        <div class="score-card">
+
+            <h3>🏆 Best Job Match</h3>
+
+            <h2>
+                {{ top.title }}
+            </h2>
+
+            <div class="big-score">
+                {{ top.score }}%
+            </div>
+
+        </div>
+
+
+        <div class="score-card">
+
+            <h3>⭐ ATS Score</h3>
+
+            <div class="big-score">
+                {{ ats_score }}%
+            </div>
+
+            <p>
+                Resume compatibility
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🧠 Detected Skills</h2>
+
+        {% if skills %}
+
+            <div class="skills">
+
+                {% for skill in skills %}
+
+                    <span>
+                        {{ skill }}
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+
+            <p>
+                No skills detected.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>💼 Job Recommendations</h2>
+
+        {% for job in recommendations %}
+
+            <div class="job">
+
+                <div class="job-info">
+
+                    <h3>
+                        {{ job.title }}
+                    </h3>
+
+                    <p>
+                        <b>Matched:</b>
+                        {{ job.matched|join(", ") }}
+                    </p>
+
+                    <p>
+                        <b>Missing:</b>
+                        {{ job.missing|join(", ") }}
+                    </p>
+
+                </div>
+
+                <div class="job-score">
+
+                    {{ job.score }}%
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-fill"
+                            style="width: {{ job.score }}%"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🎯 ATS / Resume Suggestions</h2>
+
+        {% for detail in ats_details %}
+
+            <p>✓ {{ detail }}</p>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>🤖 AI Career Analysis</h2>
+
+        <div class="llm">
+
+            {{ llm|replace('\n','<br>')|safe }}
+
+        </div>
+
+    </div>
+
+
+    <a
+        class="button"
+        href="/dashboard"
+    >
+        🔄 Analyze Another Resume
+    </a>
+
+</div>
+
+</body>
+
+</html>

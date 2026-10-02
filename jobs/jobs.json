@@ -1,0 +1,97 @@
+[
+  {
+    "title": "AI/ML Engineer",
+    "skills": [
+      "python",
+      "machine learning",
+      "deep learning",
+      "tensorflow",
+      "pytorch",
+      "scikit-learn",
+      "numpy",
+      "pandas",
+      "nlp"
+    ]
+  },
+  {
+    "title": "Data Scientist",
+    "skills": [
+      "python",
+      "machine learning",
+      "data science",
+      "pandas",
+      "numpy",
+      "scikit-learn",
+      "sql",
+      "matplotlib",
+      "power bi"
+    ]
+  },
+  {
+    "title": "Python Developer",
+    "skills": [
+      "python",
+      "flask",
+      "django",
+      "sql",
+      "mysql",
+      "git",
+      "github",
+      "html",
+      "css"
+    ]
+  },
+  {
+    "title": "Full Stack Developer",
+    "skills": [
+      "html",
+      "css",
+      "javascript",
+      "react",
+      "node.js",
+      "mongodb",
+      "sql",
+      "git",
+      "github"
+    ]
+  },
+  {
+    "title": "NLP Engineer",
+    "skills": [
+      "python",
+      "nlp",
+      "natural language processing",
+      "machine learning",
+      "deep learning",
+      "tensorflow",
+      "pytorch",
+      "llm"
+    ]
+  },
+  {
+    "title": "Generative AI Engineer",
+    "skills": [
+      "python",
+      "llm",
+      "generative ai",
+      "rag",
+      "langchain",
+      "nlp",
+      "machine learning",
+      "github"
+    ]
+  },
+  {
+    "title": "Cloud AI Engineer",
+    "skills": [
+      "python",
+      "machine learning",
+      "aws",
+      "azure",
+      "gcp",
+      "docker",
+      "kubernetes",
+      "git"
+    ]
+  }
+]

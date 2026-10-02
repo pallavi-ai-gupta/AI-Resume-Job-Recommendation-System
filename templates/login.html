@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Login - Resume AI</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container auth">
+
+    <div class="auth-box">
+
+        <h1>🤖 Resume AI</h1>
+
+        <h2>Welcome Back</h2>
+
+        <p>
+            Login to continue your resume analysis.
+        </p>
+
+
+        {% with messages = get_flashed_messages() %}
+
+            {% for message in messages %}
+
+                <p class="message">
+                    {{ message }}
+                </p>
+
+            {% endfor %}
+
+        {% endwith %}
+
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <p>
+            Don't have an account?
+            <a href="/register">
+                Create Account
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

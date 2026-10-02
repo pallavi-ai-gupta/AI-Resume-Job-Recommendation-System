@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard - Resume AI</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>🤖 Resume AI</h2>
+
+    <div>
+        Welcome, {{ name }}
+        |
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>AI Resume Screening</h1>
+
+        <p>
+            Upload your resume and discover
+            suitable career opportunities.
+        </p>
+
+    </div>
+
+
+    {% with messages = get_flashed_messages() %}
+
+        {% for message in messages %}
+
+            <p class="message">
+                {{ message }}
+            </p>
+
+        {% endfor %}
+
+    {% endwith %}
+
+
+    <div class="card">
+
+        <h2>📄 Analyze Your Resume</h2>
+
+        <form
+            action="/analyze"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <label>
+                Upload Resume
+            </label>
+
+            <input
+                type="file"
+                name="resume"
+                accept=".pdf,.docx,.txt"
+                required
+            >
+
+
+            <label>
+                Select Job Role
+            </label>
+
+            <select name="job_role">
+
+                <option>
+                    All Jobs
+                </option>
+
+                <option>
+                    AI/ML Engineer
+                </option>
+
+                <option>
+                    Data Scientist
+                </option>
+
+                <option>
+                    Python Developer
+                </option>
+
+                <option>
+                    Full Stack Developer
+                </option>
+
+                <option>
+                    NLP Engineer
+                </option>
+
+                <option>
+                    Generative AI Engineer
+                </option>
+
+                <option>
+                    Cloud AI Engineer
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                🔍 Analyze Resume
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <h2>📊 Previous Analyses</h2>
+
+    {% if analyses %}
+
+        {% for a in analyses %}
+
+            <div class="history">
+
+                <div>
+
+                    <b>
+                        📄 {{ a[2] }}
+                    </b>
+
+                    <small>
+                        {{ a[3] }}
+                    </small>
+
+                </div>
+
+                <strong>
+                    {{ a[4] }}%
+                </strong>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="card">
+            <p>No previous analyses yet.</p>
+        </div>
+
+    {% endif %}
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>

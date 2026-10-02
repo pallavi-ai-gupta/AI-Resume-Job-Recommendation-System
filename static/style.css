@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #20232a;
+}
+
+nav {
+    background: #20232a;
+    color: white;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.hero {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.card,
+.auth-box,
+.score-card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #dfe3e8;
+}
+
+.auth {
+    max-width: 450px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.auth-box {
+    padding: 35px;
+}
+
+.landing {
+    text-align: center;
+    margin-top: 100px;
+    background: white;
+    padding: 60px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px #ddd;
+}
+
+.landing h1 {
+    font-size: 45px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+select {
+    padding: 14px;
+    border: 1px solid #ccd2d9;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+button,
+.button {
+    padding: 13px 22px;
+    background: #20232a;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.secondary {
+    margin-left: 8px;
+}
+
+button:hover,
+.button:hover {
+    opacity: 0.85;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills span {
+    background: #e8eef7;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.score-card {
+    text-align: center;
+}
+
+.big-score {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.job {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 18px 0;
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-score {
+    min-width: 130px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.progress {
+    width: 130px;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #20232a;
+}
+
+.history {
+    background: white;
+    padding: 18px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.history small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+.message {
+    background: #fff3cd;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.llm {
+    line-height: 1.8;
+    background: #f7f8fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+a {
+    color: #1565c0;
+}
+
+@media (max-width: 700px) {
+
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .job {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-score {
+        width: 100%;
+    }
+
+    .progress {
+        width: 100%;
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
